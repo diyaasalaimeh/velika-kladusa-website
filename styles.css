@@ -1,0 +1,217 @@
+/* 
+  MOBILE-FIRST STYLES
+  ====================
+  - Default for small screens
+  - Two breakpoints: 600px (tablets) and 992px (large screens)
+  - Uniform gallery image sizes with object-fit: cover
+*/
+
+/* RESET & GLOBAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f4f4f4;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* CONTAINER */
+.container {
+  width: 90%;
+  margin: 0 auto;
+  position: relative; /* Allows positioning of text over a background if needed */
+}
+
+/* HEADER */
+header {
+  background: url('/landmark_project/images/image3.jpeg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  position: relative;
+
+  /* Option A: Minimum height */
+  min-height: 400px;
+
+  /* Optionally keep some padding for text spacing */
+  padding: 11rem 0; 
+}
+
+
+
+header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem; /* Mobile-first heading size */
+}
+
+
+/* NAVIGATION */
+nav {
+  background-color: #34495e;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;  /* Vertical menu on mobile */
+  align-items: center;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0.5rem 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+  color: #ecf0f1;
+  text-decoration: underline;
+}
+
+/* MAIN SECTIONS */
+.section {
+  background-color: #fff; /* White background to contrast with header/nav */
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: 5px;
+}
+
+.section h2 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  font-size: 1.4rem; /* Mobile-first heading size for sections */
+}
+
+/* GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column on mobile */
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Ensuring uniform image sizes */
+.gallery img {
+  width: 100%;          /* Fill container width */
+  height: 200px;        /* Fixed height on mobile */
+  object-fit: cover;    /* Crop if aspect ratio differs */
+  object-position: 50% 50%; /* Center focus */
+  /* border: 2px solid #2c3e50; */
+  border-radius: 5px;
+}
+
+/* CONTACT SECTION */
+.contact-section ul {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.contact-section li {
+  margin-bottom: 0.5rem;
+}
+
+.contact-section a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  background-color: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* 
+  MEDIA QUERIES
+  ====================
+  Breakpoints:
+  - Tablets: min-width: 600px
+  - Large screens: min-width: 992px
+*/
+
+/* TABLETS (min-width: 600px) */
+@media (min-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .section h2 {
+    font-size: 1.6rem;
+  }
+
+  nav ul {
+    flex-direction: row; /* Horizontal menu on tablets */
+  }
+
+  nav li {
+    margin: 0 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+  }
+
+  .gallery img {
+    height: 250px; /* Increase height for tablet screens */
+  }
+}
+
+/* LARGE SCREENS (min-width: 992px) */
+@media (min-width: 992px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+
+  .section h2 {
+    font-size: 1.8rem;
+  }
+
+  .container {
+    max-width: 1200px; /* Wider container for desktops */
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on big screens */
+  }
+
+  .gallery img {
+    height: 300px; /* Further increase height for desktop */
+  }
+
+  .section {
+    margin: 2rem 0;
+    padding: 2rem;
+  }
+}
